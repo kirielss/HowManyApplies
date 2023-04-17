@@ -8,7 +8,12 @@ function App() {
     const countString = localStorage.getItem('count');
     if (countString) {
       setCount(JSON.parse(countString));
-    }
+    };
+
+    const messageString = localStorage.getItem('message');
+    if (messageString) {
+      setMessage(JSON.parse(messageString));
+    };
   }, []);
 
   useEffect(() => {
@@ -50,7 +55,8 @@ function App() {
         break;
     }
 
-    localStorage.setItem('count', JSON.stringify(count))
+    localStorage.setItem('count', JSON.stringify(count));
+    localStorage.setItem('message', JSON.stringify(message));
   });
 
 
