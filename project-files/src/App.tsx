@@ -5,6 +5,13 @@ function App() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
+    const countString = localStorage.getItem('count');
+    if (countString) {
+      setCount(JSON.parse(countString));
+    }
+  }, []);
+
+  useEffect(() => {
     switch (count) {
       case 1:
         setMessage("Best of luck!");
@@ -44,25 +51,22 @@ function App() {
     }
 
     localStorage.setItem('count', JSON.stringify(count))
-    console.log("teste: ", localStorage.getItem('count'))
   });
 
-  useEffect(() => {
-    const countString = localStorage.getItem('count');
-    const countNum = parseInt(countString || '0');
-    setCount(countNum);
-    console.log(countString, countNum, count)
-  }, []);
+
 
 
   return (
     <div className="App">
-      <div className='card'>
-        <button onClick={() => setCount(count + 1)}>Applied? Good luck this time!</button>
-        <h1>How Many Applies?</h1>
-        <p>{count}</p>
-        <h2>{message}</h2>
+      <div className='container'>
+        <div className='card'>
+          <button onClick={() => setCount(count + 1)}>Applied? Good luck this time!</button>
+          <h1>How Many Applies?</h1>
+          <p>{count}</p>
+          <h2>{message}</h2>
+        </div>
       </div>
+      <button className='reset-button' onClick={() => setCount(0)}>I got hired!!!</button>
     </div>
   )
 }
