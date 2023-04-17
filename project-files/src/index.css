@@ -33,7 +33,7 @@ button:active {
   background-color: #ffd60a;
 }
 
-.App {
+.container {
   background-color: #001d3d;
   padding: 20px;
   border-radius: 20px;
@@ -68,6 +68,13 @@ h2 {
   color: #ffd60a;
   font-family: 'PT Sans Narrow', sans-serif;
   font-size: 2rem;
+}
+
+.reset-button {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+
 }
 
 @media screen and (min-width: 800px) {
