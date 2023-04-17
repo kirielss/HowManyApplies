@@ -59,7 +59,11 @@ function App() {
     localStorage.setItem('message', JSON.stringify(message));
   });
 
-
+  const clearAll = () => {
+    setCount(0);
+    setMessage('');
+    localStorage.clear();
+  }
 
 
   return (
@@ -72,7 +76,7 @@ function App() {
           <h2>{message}</h2>
         </div>
       </div>
-      <button className='reset-button' onClick={() => setCount(0)}>I got hired!!!</button>
+      <button className='reset-button' onClick={clearAll}>I got hired!!!</button>
     </div>
   )
 }
