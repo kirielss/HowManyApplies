@@ -36,9 +36,23 @@ function App() {
 
       case (1000):
         setMessage("If only you knew how many people are rooting for you right now... I wish I could hire you myself, but since I can't, please remember this: You are not alone!");
+        break;
 
+      case (2500):
+        setMessage("you are lying lol");
+        break;
     }
-  })
+
+    localStorage.setItem('count', JSON.stringify(count))
+    console.log("teste: ", localStorage.getItem('count'))
+  });
+
+  useEffect(() => {
+    const countString = localStorage.getItem('count');
+    const countNum = parseInt(countString || '0');
+    setCount(countNum);
+    console.log(countString, countNum, count)
+  }, []);
 
 
   return (
