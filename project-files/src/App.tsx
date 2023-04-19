@@ -65,6 +65,8 @@ function App() {
     localStorage.clear();
   }
 
+// localstorage working
+// maybe latter implement DB
 
   return (
     <div className="App">
